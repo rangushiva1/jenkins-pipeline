@@ -7,7 +7,7 @@ pipeline {
             steps {
                 warnError('Git pull') {
                 git branch: 'main', credentialsId: '************-4c80-9c51-16e7b03ab826', url: 'git@github.com:rangushiva1/app-deploy.git'
-                sh "git fetch"
+                sh "git pull"
 
                     }
                 }
