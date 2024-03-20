@@ -6,7 +6,7 @@ pipeline {
         stage('Git pull') {
             steps {
                 warnError('Git pull') {
-                git branch: 'main', credentialsId: '78e4dc85-554e-4c80-9c51-16e7b03ab826', url: 'git@github.com:rangushiva1/app-deploy.git'
+                git branch: 'main', credentialsId: '************-4c80-9c51-16e7b03ab826', url: 'git@github.com:rangushiva1/app-deploy.git'
                 sh "git fetch"
 
                     }
@@ -30,7 +30,7 @@ pipeline {
             steps {
                 warnError('Deploy to EKS') {
                 dir('/var/lib/jenkins/workspace/k8s-deploy') {
-                git branch: 'main', credentialsId: '78e4dc85-554e-4c80-9c51-16e7b03ab826', url: 'git@github.com:rangushiva1/k8s-files.git'    
+                git branch: 'main', credentialsId: '************-4c80-9c51-16e7b03ab826', url: 'git@github.com:rangushiva1/k8s-files.git'    
                 sh '''
                 cd /var/lib/jenkins/workspace/k8s-deploy/
                 kubectl apply -f deploy-app.yml
