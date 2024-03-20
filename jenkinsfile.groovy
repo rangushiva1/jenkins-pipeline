@@ -17,7 +17,6 @@ pipeline {
                 warnError('Dockerfile push') {
                 
                 sh '''
-                whoami
                 docker build -f Dockerfile -t demo-app-shiva .
                 docker tag demo-app-shiva:latest public.ecr.aws/m2x6m9z0/demo-app-shiva:latest
                 docker push public.ecr.aws/m2x6m9z0/demo-app-shiva:latest
